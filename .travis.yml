@@ -1,0 +1,9 @@
+language: java
+script: mvn hpi:hpi
+deploy:
+  provider: releases
+  api_key:
+    secure: PRrvi1WIi9ofjHuShkA9BYM0Y2788BIJ0W4RE9a7MC46FXhId+XAdKCwwg3d8brPOtwSxB1Z0MnHRy+3W5Wq7/fRgwG6tORVSC1sHS1oKafK+fXcr5HqvNwA/s8bTyCQubAloqbsgYjqKwQnFynrkBnKo0S7N6UGausd4zzRD/M=
+  file: target/pipeline-builder.hpi
+  on:
+    repo: shazam/pipeline-builder
