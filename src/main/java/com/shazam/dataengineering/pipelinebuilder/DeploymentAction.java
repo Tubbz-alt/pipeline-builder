@@ -293,6 +293,12 @@ public class DeploymentAction implements Action {
         proxy.activatePipeline(pipelineId);
         clientMessages.add("[INFO] Pipeline has been activated!");
         clientMessages.add("[INFO] New pipeline ID: " + pipelineId);
+
+        String pipelineUrl = "https://console.aws.amazon.com/datapipeline/home?#ExecutionDetailsPlace:pipelineId=" +
+                pipelineId +
+                "&show=latest";
+
+        clientMessages.add(String.format("[INFO] Pipeline URL: <a href=\"%s\">%s</a>", pipelineUrl, pipelineUrl));
     }
 
     private void uploadNewPipeline(String pipelineId, DataPipelineClient client) throws DeploymentException {
